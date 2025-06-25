@@ -1,0 +1,54 @@
+<script>
+    const products = {
+      "longchain": {
+        name: "Long Chain",
+        img: "images/longchain.jpg",
+        desc: "Elegant long gold covering chain. Traditional model with a 6-month color guarantee. Ideal for weddings and festivals.",
+        price: "Rs. 250"
+      },
+      "jimiki": {
+        name: "Jimiki Kammal",
+        img: "images/jimiki.jpg",
+        desc: "Classic Jimiki-style gold covering earrings. Light weight and long-lasting polish. Suitable for all age groups.",
+        price: "Rs. 250"
+      },
+      "stonevalayal": {
+        name: "Stone Valayal",
+        img: "images/stonevalayal.jpg",
+        desc: "Beautifully designed stone bangles (valayal) with sparkling stones. Comes in multiple sizes and has a glossy finish.",
+        price: "Rs. 250"
+      },
+      "stonejimiki": {
+        name: "Stone Jimiki Kammal",
+        img: "images/stonejimiki.jpg",
+        desc: "New model Jimiki with stone work. Traditional look with added modern sparkle. Perfect for festive occasions.",
+        price: "Rs. 250"
+      },
+      "stonekammal": {
+        name: "Stone Kammal",
+        img: "images/stonekammal.jpg",
+        desc: "Small, stylish gold covering earrings with floral stone designs. Lightweight and suitable for daily wear.",
+        price: "Rs. 150"
+      },
+      "valayal": {
+        name: "Valayal",
+        img: "images/valayal.jpg",
+        desc: "Thick and sturdy gold covering bangles. Smooth finish and best choice for regular use with 6-month guarantee.",
+        price: "Rs. 150"
+      }
+    };
+    
+    function openModal(key) {
+      const product = products[key];
+      document.getElementById("modalTitle").textContent = product.name;
+      document.getElementById("modalImage").src = product.img;
+      document.getElementById("modalDesc").textContent = product.desc;
+      document.getElementById("modalPrice").textContent = product.price;
+      document.getElementById("productModal").style.display = "block";
+    }
+    
+    function closeModal() {
+      document.getElementById("productModal").style.display = "none";
+    }
+    </script>
+    

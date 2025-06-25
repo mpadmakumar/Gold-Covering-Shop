@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #chatBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
+  z-index: 1000;
+}
+
+#chatBox {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 280px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 0 10px gray;
+  font-family: sans-serif;
+}
+
+#chatHeader {
+  background: #f39c12;
+  color: white;
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+}
+
+#chatLog {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#userInput {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 10px 10px;
+  outline: none;
+}
+
+</style>
+<script>
+   
+function toggleChat() {
+  const chatBox = document.getElementById("chatBox");
+  chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "block" : "none";
+}
+
+function chat() {
+  const input = document.getElementById("userInput");
+  const userText = input.value.trim();
+  if (userText === "") return;
+
+  const response = getBotReply(userText);
+  const log = document.getElementById("chatLog");
+  log.innerHTML += `<div><b>You:</b> ${userText}</div><div><b>Bot:</b> ${response}</div>`;
+  input.value = "";
+  log.scrollTop = log.scrollHeight;
+}
+function getBotReply(msg) {
+  msg = msg.toLowerCase();
+
+  // Tamil letter detection regex (அ to ள் range)
+  const isTamil = /[அ-ஹஂ௦-௯]/.test(msg);
+
+  if (isTamil) {
+    // 💬 Tamil Replies
+    if (msg.includes("விலை")) return "எல்லா பொருட்களும் ₹150 முதல் தொடங்குகிறது.";
+    else if (msg.includes("உறுதி")) return "எல்லா பொருட்களுக்கும் 6 மாதம் வரை உறுதி உண்டு.";
+    else if (msg.includes("அட்ரஸ்")) return "எங்கள் கடை சிவகாசியில் உள்ளது. அழைக்க: 6374306230";
+    else if (msg.includes("நேரம்")) return "கடை நேரம்: காலை 9am - மாலை 8pm";
+    else if (msg.includes("வாட்ஸ்அப்")) return `<a href='https://wa.me/916374306230' target='_blank'>WhatsApp-இல் தொடர்பு கொள்ளுங்கள்</a>`;
+    else return "மன்னிக்கவும், உங்கள் கேள்வியை புரிந்துக்கொள்ளவில்லை. தயவுசெய்து வேறு வார்த்தைகளில் கேளுங்கள்.";
+  } else {
+    // 💬 English Replies
+    
+    if (msg.includes("price")) return "All products start from ₹150 and above.";
+    else if (msg.includes("guarantee")) return "All items come with a 6-month guarantee.";
+    else if (msg.includes("address") || msg.includes("location") || msg.includes("shop")) return "Our shop is located in Sivakasi. Call: 6374306230.";
+    else if (msg.includes("time")) return "Shop hours: 9 AM to 8 PM daily.";
+    else if (msg.includes("whatsapp")) return `<a href='https://wa.me/916374306230' target='_blank'>Contact us on WhatsApp</a>`;
+    else return "Sorry, I didn’t understand your question. Please try using different words.";
+  }
+}
+
+
+</script>
+
+</script>
+<body>
+ 
+
+   <!-- Chatbot Floating Button -->
+<div id="chatBtn" onclick="toggleChat()">🤖</div>
+
+<!-- Chatbox Window -->
+<div id="chatBox">
+  <div id="chatHeader">Mini Bot 
+    <span onclick="toggleChat()" style="float:right;cursor:pointer;">✖</span>
+  </div>
+  <div id="chatLog"></div>
+  <input type="text" id="userInput" placeholder="Ask something..." 
+         onkeydown="if(event.key==='Enter') chat()">
+</div>
+
+
+</body>
+</html>

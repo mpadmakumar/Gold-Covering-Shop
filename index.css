@@ -1,0 +1,711 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+#nav{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color:gold;
+    position: fixed;
+    z-index: 1;
+    
+}
+#nav h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#nav span{
+    color: white;
+}
+#nav #ul{
+    margin-right: 20px;
+}
+#nav #ul,li{
+    display: flex;
+    column-gap: 20px;
+    color: white;
+    font-size: 18px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.sidebar {
+    font-size: 25px;
+    margin-right: 20px;
+    color: white;
+    display: none;
+}
+
+#sidenav{
+    position:fixed;
+    height:400px;
+    width: 250px;
+    transition: 1s;
+    z-index: 1;
+    background-color:black;
+    top: 70px;   
+    left:-400px ;
+    border-radius: 5px;
+}
+#sidenav i{
+     color:gold;
+     font-size: 25px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     margin-left: 220px;
+}
+#sidenav #ul{
+     margin-left: 15px;
+     margin-top: 20px;
+     margin-right: 10px;
+     row-gap: 40px;
+}
+#sidenav #ul li:hover{
+    color: gold;
+    text-decoration: underline;
+}
+
+#home-page{
+    display: flex;
+    background-image: url(./h-2.jpeg);
+    background-size: cover;
+    height: 750px;
+    justify-content: flex-start;
+    background-attachment: fixed;
+}
+
+#home-page .text h1{
+     
+       margin-left: 45px;
+       margin-top: 230px;
+       color:gold;
+       font-size: 55px;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.text p{
+    font-size: 25px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 45px;
+    color:white;
+    margin-top: 20px;
+}
+.text button{
+    margin-top: 25px;
+    margin-left: 45px;
+    height: 40px;
+    width: 120px;
+    background-color: black;
+    border:1px solid;
+    color:white;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#about{
+    margin-top: 10px;
+
+}
+#about h1{
+    text-align: center;
+   font-size: 45px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color:black;
+   margin-top: 50px;
+}
+#about span{
+   color: red;
+   font-size: 40px;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#about hr{
+    width: 100px;
+    border: 3px solid red;
+    border-radius: 10px;
+    margin-left: 685px;
+    margin-bottom: 50px;
+}
+
+#about-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+#about-section .image{
+    margin: 20px;
+    
+}
+#about-section .about{
+
+    margin-left: 50px;
+    font-size: 18px;
+    font-family:cursive;
+    margin-right: 50px;
+    margin-top: 60px;
+    width: 600px;
+}
+#about-section .about p{
+     margin-bottom: 15px;
+}
+#about-section .about em{
+    margin-left: 30px;
+}
+#product h1{
+     text-align: center;
+    font-size: 48px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:black;
+    margin-top: 50px;
+    
+}
+#product span{
+    color: red;
+    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#product hr{
+    width: 100px;
+    border: 3px solid red;
+    border-radius: 10px;
+   margin-left: 690px;
+   margin-bottom: 50px;
+}
+#product-section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+#product-section .images{
+    height: 350px;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.images h3{
+    font-size: 25px;
+    margin-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.images button{
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: yellow;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#contact h1{
+    text-align: center;
+   font-size: 45px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color:black;
+   margin-top: 50px;
+}
+#contact hr{
+    width: 100px;
+    border: 3px solid red;
+    border-radius: 10px;
+   margin-left: 690px;
+   margin-bottom: 50px;
+}
+#contact span{
+   color: red;
+   font-size: 40px;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#contact-section{
+    display:flex ;
+    justify-content: space-around;
+}
+
+#contact-section .contact{
+
+    height: 530px;
+    width: 450px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #202020;
+    color: aliceblue;
+    border-radius: 5px;
+
+}
+#contact-section .contact .sl,.call,.oh{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 8px;
+    height: 160px;
+    width: 420px;
+    border:1px solid gold ;
+    border-radius: 5px;
+}
+.contact h2{
+    margin: 10px;
+    margin-left: 30px;
+}
+.contact p{
+    margin-left: 30px;
+    color: gray;
+}
+.contact .sl,.call,.oh{
+    background-color: #111010;
+}
+
+#contact-section .contact-form{
+    height: 530px;
+    width: 490px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:white;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.contact-form h2{
+    margin: 20px;
+  
+}
+.contact-form #form{
+    margin-left: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#form label{
+    font-size: 23px;
+   
+}
+#form i{
+    color:red;
+}
+#form input{
+    height: 40px;
+    width: 400px;
+    margin: 10px;
+    margin-left: 0px;
+    font-size: 20px;
+    padding-left: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: #f1f0f0;
+}
+#form input:focus{
+    visibility: none;
+}
+#form button{
+
+    height: 35px;
+    width: 130px;
+    border: 1px solid black;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: gold;
+}
+
+.login-body{
+    display: flex;
+    justify-content: center;
+   position: absolute;
+   top: -1500px;
+}
+.login-body div{
+
+    width: 420px;
+    height: 300px;
+    background-color: gold;
+    border-radius: 10px;
+    margin-top: 100px;
+    border: 1px solid black;
+}
+.login-body div form{
+
+    width: 420px;
+    height: 239px;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding-top: 50px;
+
+}
+.login-body div form label{
+
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 40px;
+}
+.login-body div form .inp{
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      margin-left: 20px;
+      margin-bottom: 15px;
+}
+.login-body div form #password{
+    margin-left: 30px;
+}
+.login-body div form .btn{
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: gold;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .modal-content img{
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .modal-content h2{
+     font-size: 25px;
+     margin-bottom: 10px;
+  }
+  .modal-content p{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .close-btn {
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+  }
+
+  #chatBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color:gold;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 0 5px black;
+    z-index: 1000;
+  }
+  
+  #chatBox {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 280px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px gray;
+    font-family: sans-serif;
+  }
+  
+  #chatHeader {
+    background: #f39c12;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  #chatLog {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  #userInput {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-top: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+    outline: none;
+  }
+.footer{
+    background-color: black;
+    margin-top: 70px;
+}
+#footer{
+    color: white;
+    display: flex;
+    margin-bottom: 0px;
+    justify-content:space-between;
+}
+#footer .about i{
+    margin-top: 20px;
+    font-size: 23px;
+    padding-left: 15px;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.about i:hover{
+    color: gold;
+    transform: scale(1.4);
+}
+#footer h2{
+    font-size: 30px;
+    margin-top: 20px;
+    
+}
+#footer span{
+    color:gold;
+}
+
+.contact b{
+    color: chartreuse;
+}
+#footer p{
+    margin-top: 20px;
+    font-family:'Trebuchet MS';
+    color:wheat;
+}
+#footer #hover p:hover{
+   
+    color:gold;
+    text-decoration: underline;
+}
+.footer-last{
+    color: wheat;
+    height: 100px;
+}
+.footer-last {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.footer-last em,i{
+    color:white ;
+    font-size: 20px;
+    margin-left: 00px;
+}
+.footer-last i{
+    margin-left: 10px;
+    font-size: 20px;
+    color: white;
+}
+.footer-last .em{
+    margin-left: 400px;
+    font-size: 23px;
+}
+.footer-last hr{
+    margin-top: 0px;
+    margin-bottom: 15px;
+    color:gray;
+}
+.footer-last span{
+    color: gold;
+    font-size: 25px;
+}
+#image-section{
+    margin-top: 20px;
+}
+
+
+/*------------------------Meadia screen-----------*/
+@media screen and (max-width:700px){
+
+    #nav h2{
+        font-size: 20px;
+    }
+     #nav #ul{
+        display: none;
+     }
+
+     .sidebar {
+        display: block;
+     }
+
+     #home-page{
+
+        background-image: url(./h-2.jpeg);
+        background-size: cover;
+        height: 520px;
+       
+     }
+     #home-page .text h1{
+          font-size: 38px;
+          margin-top: 200px;
+          margin-left: 10px;
+          color:gold;
+     }
+     #home-page .text p{
+        font-size: 20px;
+        margin-left: 10px;
+        color:white;
+   }
+   .text button{
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+}
+
+#product-section{
+    justify-content:space-evenly;  
+    display: flex;
+}
+#product-section .images{
+    margin-left: 0px;
+    width: 175px;
+    height: 300px;
+}
+#product-section .images img{
+   
+    width: 170px;
+    height: 165px;
+}
+#product hr{
+
+    margin-left: 160px;
+    margin-bottom: 40px;
+}
+#about hr{
+
+    margin-left: 160px;
+    margin-bottom: 40px;
+}
+#about-section {
+    display: block;
+    justify-content: space-around;
+}
+#about-section .image {
+    margin: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+#about-section .image img {
+    height: 350px;
+    width: 300px;
+}
+#about-section .about{
+
+    margin-left: 30px;
+    font-size: 15px;
+    margin-top: 20px;
+    width: 350px;
+}
+#about-section .about .p{
+    display: none;
+}
+
+#contact hr{
+
+    margin-left: 160px;
+    margin-bottom: 40px;
+}
+#contact-section{
+    display:block ;
+    
+}
+#contact-section .contact{
+
+    height: 530px;
+    width: 360px;
+    padding-top: 10px;
+    margin-left: 0px;
+}
+#contact-section .contact .sl,.call,.oh{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 8px;
+    height: 160px;
+    width: 330px;
+}
+#contact-section .contact-form{
+    height: 510px;
+    width: 360px;
+    margin-left: 0px;
+}
+#form input{
+    height: 35px;
+    width: 300px;
+    margin: 10px;
+    margin-left: 0px;
+}
+#form button{
+
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+
+}
+
+
+#footer{
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#footer h2{
+    font-size: 30px;
+}
+.footer-last em{
+     font-size:16px ;
+     text-align: center;
+}
+.footer-last span{
+    color: gold;
+    font-size: 18px;
+}
+.footer-last i{
+    margin-left: 10px;
+    font-size: 18px;
+    color: white;
+    margin-left: 0px;
+}
+.footer-last .em{
+    margin-left: 50px;
+    text-align: center;
+    font-size:25px ;
+    margin-top:20px;
+    
+}
+.footer-last .em span{
+    font-size: 28px;
+}
+
+}
