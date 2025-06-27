@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* Reset and center */
+    body, html {
+      margin: 0;
+      height: 100%;
+      overflow: hidden; /* prevent scroll during intro */
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    /* Intro container (full screen) */
+    #intro {
+      position: fixed;
+      inset: 0;
+      background-color: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      animation: fadeOutIntro 1s ease forwards;
+      animation-delay: 3s; /* intro visible for 3s before fading */
+    }
+
+    /* Logo style */
+    #logo {
+      width: 150px;
+      height: 150px;
+      background: url('tonychopper.jpg') no-repeat center/contain;
+      opacity: 0;
+      transform: scale(0.6);
+      animation: logoIn 1s ease forwards;
+    }
+
+    /* Optional text below logo */
+    #intro-text {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      opacity: 0;
+      animation: textIn 1s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    /* Main content hidden initially */
+    #main-content {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    /* When intro ends, show main */
+    body.intro-ended #main-content {
+      opacity: 1;
+    }
+
+    /* Animations */
+    @keyframes logoIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes textIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOutIntro {
+      to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+    }
+  </style>
+</head>
+<body>
+     <div id="intro">
+    <div id="logo"></div>
+    <div id="intro-text">Welcome to Mini Gold Covaring Shop</div>
+  </div>
+   <script>
+    // After the intro animation (3s + 1s fadeout), remove intro and show main
+    setTimeout(() => {
+      document.body.classList.add('intro-ended');
+      const intro = document.getElementById('intro');
+      intro.style.display = 'none';
+      document.body.style.overflow = 'auto'; // enable scrolling
+      window.location.href="index.html"
+    }, 4000); // 3s visible + 1s fadeout
+  </script>
+</body>
+</html>

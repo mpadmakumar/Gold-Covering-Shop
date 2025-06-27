@@ -118,7 +118,8 @@ const products = [
     document.getElementById("modalImg").src = p.image;
     document.getElementById("modalTitle").textContent = p.name;
     document.getElementById("modalDesc").textContent = p.description;
-    document.getElementById("modalPrice").textContent = `Rs. ${p.price} (Old: Rs. ${p.oldPrice})`;
+    document.getElementById("oldPrice").textContent = `${p.oldPrice}`;
+    document.getElementById("modalPrice").textContent = ` ${p.price} `;
     document.getElementById("modalGuarantee").textContent = p.guarantee;
 
     document.getElementById("productModal").style.display = "block";
@@ -181,3 +182,18 @@ const products = [
       else return "Sorry, I didn’t understand your question. Please try using different words.";
     }
   }
+
+   function closeBtn1(){
+      document.getElementById("login-content").style.display = "none";
+  }
+
+  setTimeout(function(){
+          document.getElementById("login-content").style.display = "none";
+  }, 10000);
+
+   setTimeout(() => {
+      document.body.classList.add('intro-ended');
+      const intro = document.getElementById('intro');
+      intro.style.display = 'none';
+      document.body.style.overflow = 'auto'; // enable scrolling
+    }, 4000);
