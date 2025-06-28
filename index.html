@@ -9,14 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+   <div id="cart-box">
+    <h4 style="font-size: 25px; text-align: center; margin-bottom: 30px;">Your Cart</h4>
+    <ul id="cart-items" style="list-style: none; padding: 0; "></ul>
+    <p style="font-size: 23px; margin-top: 20px;margin-bottom: 20px;">Total: ₹<span id="cart-total">0</span></p>
+    <button style="width: 100px; height: 30px; border: 1px solid black; border-radius: 5px; background-color: black; color: white;" onclick="clearCart()">Clear Cart</button>
+  </div>
     <header>
         <nav id="nav">
             <h2>Mini Gold <span>Covering</span></h2>
             <ul id="ul">
-               <a href="#home-page"><li>Home</li></a>
-               <a href="#product"><li>Product</li></a>
-               <a href="#about"><li>About</li></a>
-               <a href="#contact"><li>Contact</li></a>
+               <a href="#home-page"><li id="li">Home</li></a>
+               <a href="#product"><li id="li">Product</li></a>
+               <a href="#about"><li id="li">About</li></a>
+               <a href="#contact"><li id="li">Contact</li></a>
             </ul>
             <div class="sidebar">
                <i class="fa-solid fa-bars" onclick="opennav()"></i>
@@ -25,12 +31,18 @@
          <div id="sidenav">
            <i class="fa-solid fa-xmark" onclick="closenav()"></i>
            <ul id="ul">
-               <a href="#home-page"><li>Home</li></a><br>
-               <a href="#product"><li>product</li></a><br>
-               <a href="#about"><li>About</li></a><br>
-               <a href="#contact"><li>Contact</li></a><br>
+               <a href="#home-page"><li id="li">Home</li></a><br>
+               <a href="#product"><li id="li">product</li></a><br>
+               <a href="#about"><li id="li">About</li></a><br>
+               <a href="#contact"><li id="li">Contact</li></a><br>
             </ul>
          </div>
+         <div style="position: fixed; top: 10px; right: 20px; z-index:1000;">
+          <button onclick="toggleCart()" style="font-size:16px; padding:10px 15px; background-color:black; border:none; color:white; border-radius:6px;">
+         🛒 Cart (<span id="cart-count">0</span>)
+         </button>
+        </div>
+
     </header>
    <section id="home-page">
     <div data-aos="zoom-in-left" class="text">
@@ -39,7 +51,38 @@
          <a><button>contact</button></a>
     </div>
    </section>
-  
+  <section id="about">
+      <div class="h">
+         <h1><h1>About <span>As</span></h1>
+         <hr>
+      </div>
+      <div id="about-section">
+         <div  data-aos="zoom-in-left" class="image">
+           <img src="./h.jpeg" height="450px" width="360px">
+         </div>
+         <div  class="about">
+            <p>
+               <em></em>Welcome to <strong>Mini Gold Covering</strong> – your trusted shop for premium quality gold covering jewellery in Sivakasi. 
+               We offer a wide range of stylish and affordable jewellery collections, both <strong>wholesale and retail</strong>. 
+               From traditional to trendy, we have everything you need – <strong>Chains, Kammal, Valayal, Harams, Necklace, Jimmiki Kammal, Thali Kodi</strong>, and more.
+            </p>
+            <p class="a">
+               <em></em>All our jewels come with <strong>6 months guarantee</strong> and are made with high-quality materials to give you the perfect gold-like finish. 
+               We ensure that each piece is <strong>polished and inspected</strong> before delivery.
+
+            </p>
+            <p class="p">
+               
+               <em></em>We value customer satisfaction and strive to provide the best in both quality and service. 
+               Our mission is to make every customer look beautiful without spending a fortune on real gold.
+            </p>
+            <p>
+               <em></em>Visit our shop today or contact us online to place your order. Thank you for trusting <strong>Mini Gold Covering</strong>!
+            </p>
+
+         </div>
+      </div>
+   </section>
    <section id="product">
       <h1><h1>Our <span>Product</span></h1>
       <hr>
@@ -49,6 +92,8 @@
          <img src="./dc.jpeg" height="240px" width="250px">
          <h3>Dalar Chain</h3>
          <button onclick="openProductModal(0)">View Details</button>
+       
+       
       </div>
       <div data-aos="fade-up"
       data-aos-anchor-placement="center-bottom" class="images">
@@ -118,78 +163,8 @@
       </div>
      </div>
    </section>
-   <section id="about">
-      <div class="h">
-         <h1><h1>About <span>As</span></h1>
-         <hr>
-      </div>
-      <div id="about-section">
-         <div  data-aos="zoom-in-left" class="image">
-           <img src="./h.jpeg" height="450px" width="360px">
-         </div>
-         <div  class="about">
-            <p>
-               <em></em>Welcome to <strong>Mini Gold Covering</strong> – your trusted shop for premium quality gold covering jewellery in Sivakasi. 
-               We offer a wide range of stylish and affordable jewellery collections, both <strong>wholesale and retail</strong>. 
-               From traditional to trendy, we have everything you need – <strong>Chains, Kammal, Valayal, Harams, Necklace, Jimmiki Kammal, Thali Kodi</strong>, and more.
-            </p>
-            <p class="a">
-               <em></em>All our jewels come with <strong>6 months guarantee</strong> and are made with high-quality materials to give you the perfect gold-like finish. 
-               We ensure that each piece is <strong>polished and inspected</strong> before delivery.
-
-            </p>
-            <p class="p">
-               
-               <em></em>We value customer satisfaction and strive to provide the best in both quality and service. 
-               Our mission is to make every customer look beautiful without spending a fortune on real gold.
-            </p>
-            <p>
-               <em></em>Visit our shop today or contact us online to place your order. Thank you for trusting <strong>Mini Gold Covering</strong>!
-            </p>
-
-         </div>
-      </div>
-   </section>
-    <!--customer review-->
-    <section id="reviews" >
-  <h2 >Customer<span>  Reviews</span></h2>
-  <hr>
-  <div class="reviews" >
-    
-    <!-- Review 1 -->
-    <div class="cReview" style="width: 300px; background: white; color: black; padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
-      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Customer" style="width:80px; margin-left: 115px; border-radius: 50%; margin-bottom: 10px;">
-      <p style="font-size: 20px; margin-top:5px; margin-bottom: 15px;text-align: center;">⭐⭐⭐⭐⭐</p>
-      <p style="font-size: 18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px; text-align: center;">"<b>The chain quality is amazing!</b> It still looks brand new even after 6 months. I'm really impressed with the polish and finish."</p>
-      <p style="font-weight: bold; color: #555; font-size: 20;  margin-top: 20px;">— Revathi M., Madurai</p>
-    </div>
-
-    <!-- Review 2 -->
-    <div style="width: 300px; background: white; color: black; padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);" >
-      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Customer"  style="width:80px; margin-left: 115px; border-radius: 50%; margin-bottom: 10px;">
-      <p style="font-size: 20px;margin-top:5px; margin-bottom: 15px;text-align: center;">⭐⭐⭐⭐⭐</p>
-      <p style="font-size: 18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px; text-align: center;">"I ordered a pair of bangles for my sister’s birthday. <b>The design was so beautiful and elegant</b>. She loved it a lot!"</p>
-      <p style="font-weight: bold; color: #555; font-size: 20;  margin-top: 20px;">— Sathish R., Sivakasi</p>
-    </div>
-
-    <!-- Review 3 -->
-    <div style="width: 300px; background: white;color:black; padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
-      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Customer" style="width:80px; margin-left: 115px; border-radius: 50%; margin-bottom: 10px;" >
-      <p style="font-size: 20px;margin-top:5px; margin-bottom: 15px;text-align: center;" >⭐⭐⭐⭐⭐</p>
-      <p style="font-size: 18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px; text-align: center;">"<b>Bought a Jimiki Kammal for my engagement</b>, and everyone thought it was real gold. Great value for money and lovely packaging!"</p>
-      <p style="font-weight: bold; color: #555; font-size: 20;  margin-top: 20px;">— Keerthana, Coimbatore</p>
-    </div>
-
-    <!-- Review 4 -->
-    <div style="width: 300px; background: white; color: black; padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
-      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Customer" style="width:80px; margin-left: 115px; border-radius: 50%; margin-bottom: 10px;" >
-      <p style="font-size: 20px;margin-top:5px; margin-bottom: 15px;text-align: center;">⭐⭐⭐⭐⭐</p>
-      <p style="font-size: 18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px; text-align: center;">"Very satisfied with the service. The item arrived on time, well packed. <b>Excellent customer support and quality</b>."</p>
-      <p style="font-weight: bold; color: #555; font-size: 30; margin-top: 20px;">— Arun P., Virudhunagar</p>
-    </div>
-
-  </div>
-</section>
+   
+   
 <section id="gallery">
    <h1><h1>Our <span>Gallery</span></h1>
       <hr>
@@ -235,6 +210,46 @@
       </div>
      </div>
 </section>
+ <!--customer review-->
+    <section id="reviews" >
+  <h2 >Customer<span>  Reviews</span></h2>
+  <hr>
+  <div class="reviews" >
+    
+    <!-- Review 1 -->
+    <div class="cReview" style="width: 300px; background: white; color: black; padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Customer" style="width:80px; margin-left: 115px; border-radius: 50%; margin-bottom: 10px;">
+      <p style="font-size: 20px; margin-top:5px; margin-bottom: 15px;text-align: center;">⭐⭐⭐⭐⭐</p>
+      <p style="font-size: 18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px; text-align: center;">"<b>The chain quality is amazing!</b> It still looks brand new even after 6 months. I'm really impressed with the polish and finish."</p>
+      <p style="font-weight: bold; color: #555; font-size: 20;  margin-top: 20px;">— Revathi M., Madurai</p>
+    </div>
+
+    <!-- Review 2 -->
+    <div style="width: 300px; background: white; color: black; padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);" >
+      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Customer"  style="width:80px; margin-left: 115px; border-radius: 50%; margin-bottom: 10px;">
+      <p style="font-size: 20px;margin-top:5px; margin-bottom: 15px;text-align: center;">⭐⭐⭐⭐⭐</p>
+      <p style="font-size: 18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px; text-align: center;">"I ordered a pair of bangles for my sister’s birthday. <b>The design was so beautiful and elegant</b>. She loved it a lot!"</p>
+      <p style="font-weight: bold; color: #555; font-size: 20;  margin-top: 20px;">— Sathish R., Sivakasi</p>
+    </div>
+
+    <!-- Review 3 -->
+    <div style="width: 300px; background: white;color:black; padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Customer" style="width:80px; margin-left: 115px; border-radius: 50%; margin-bottom: 10px;" >
+      <p style="font-size: 20px;margin-top:5px; margin-bottom: 15px;text-align: center;" >⭐⭐⭐⭐⭐</p>
+      <p style="font-size: 18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px; text-align: center;">"<b>Bought a Jimiki Kammal for my engagement</b>, and everyone thought it was real gold. Great value for money and lovely packaging!"</p>
+      <p style="font-weight: bold; color: #555; font-size: 20;  margin-top: 20px;">— Keerthana, Coimbatore</p>
+    </div>
+
+    <!-- Review 4 -->
+    <div style="width: 300px; background: white; color: black; padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Customer" style="width:80px; margin-left: 115px; border-radius: 50%; margin-bottom: 10px;" >
+      <p style="font-size: 20px;margin-top:5px; margin-bottom: 15px;text-align: center;">⭐⭐⭐⭐⭐</p>
+      <p style="font-size: 18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 10px; text-align: center;">"Very satisfied with the service. The item arrived on time, well packed. <b>Excellent customer support and quality</b>."</p>
+      <p style="font-weight: bold; color: #555; font-size: 30; margin-top: 20px;">— Arun P., Virudhunagar</p>
+    </div>
+
+  </div>
+</section>
    <section id="contact">
       <h1><h1>Contact <span>Us</span></h1>
       <hr>
@@ -264,15 +279,18 @@
             <h2>Loking Forward To Hearing From You</h2>
             <form id="form">
                <label>Your Name <i>*</i></label><br>
-               <input type="text" placeholder="Your Name"><br>
+               <input type="text" placeholder="Your Name" id="name"><br>
+               <small id="sm">Enter Your Name</small><br>
                <label>Your Email <i>*</i></label><br>
-               <input type="text" placeholder="Your Email"><br>
+               <input type="text" placeholder="Your Email" id="email"><br>
+               <small id="sm">Enter Your Email Id</small><br>
                <label>Phone Numaber <i>*</i></label><br>
-               <input type="text" placeholder="Your Phone number"><br>
+               <input type="text" placeholder="Your Phone number" id="phoneNo"><br>
+               <small id="sm">Enter Your Mobile No</small><br>
                <label>Message <i>*</i></label><br>
                <input type="text" placeholder="Your Name"><br>
-               <button >submit</button>
-
+               <input class="btn" type="submit" value="submit" onclick="ContactValidata()">
+              
 
             </form>
           </div>
@@ -287,6 +305,7 @@
         <p id="modalDesc"></p>
         <p><strong>Price:</strong> Rs.<del id="oldPrice"></del><span id="modalPrice"></span></p>
         <p><strong>Guarantee:</strong> <span id="modalGuarantee"></span></p>
+        <button class="btn" onclick="AddToCart()">Add to Cart</button>
       </div>
     </div>
     <div id="chatBtn" onclick="toggleChat()">🤖</div>
@@ -300,11 +319,38 @@
   <input type="text" id="userInput" placeholder="Ask something..." 
          onkeydown="if(event.key==='Enter') chat()">
 </div>
+<!--register-->
+<div id="register-content" class="register">
+      <div class="register-content" onsubmit="(login())">
+         <span class="close-btn" onclick="closeBtn1()">&times;</span>
+         <form>
+            <h1 style="margin-bottom: 20px;color: red;text-align: center;">Register</h1>
+           <label>Name</label>
+           <input type="text" class="inp" name="uName" id="uName"style="margin-left: 160px;">
+           <br>
+           <label>E-Mail Id  </label>
+           <input type="email" class="inp" name="emailId" id="emailId" style="margin-left: 125px;">
+           <br>
+           <label>Password</label>
+           <input type="password" class="inp" name="password" id="password"style="margin-left: 120px;">
+           <br>
+           <label>Conform Password </label>
+           <input type="password" class="inp" name="cPassword" id="cPassword">
+           <br>
+           <label>Mobile Number </label>
+           <input type="tel" class="inp" name="mobileNo" id="mobileNo" style="margin-left: 55px;">
+           <br>
+           <input type="button" value="submit" class="btn" onclick="loginForm()">
+           <br>
+       </form>
+      </div>
+    </div>
 <!--Login -->
 <div id="login-content" class="login">
       <div class="login-content">
-         <span class="close-btn" onclick="closeBtn1()">&times;</span>
+         <span class="close-btn" onclick="closeBtn2()">&times;</span>
          <form>
+             <h1 style="margin-bottom: 20px;color: red;text-align: center;">Login</h1>
            <label>UserName</label>
            <input type="text" class="inp" name="uName" id="uName">
            <br>
